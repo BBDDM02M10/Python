@@ -45,7 +45,7 @@ try:
                 llista.append(linea[14:64].strip())
                 llista.append(linea[11:13])
                 llista.append(linea[9:11])
-                insert_provincies = ('INSERT INTO provincies (nom, codi_ine, comunitat_aut_id) VALUES (%s, %s, %s)')
+                insert_provincies = ('INSERT INTO provincies (nom, codi_ine, comunitat_aut_id) VALUES (%s, %s, %d)')
                 cursor.execute(insert_provincies, llista)
 except OSError as e:
     print('Imposible abrir fichero ' + pathFitxer)

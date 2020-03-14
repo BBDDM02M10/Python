@@ -1,10 +1,10 @@
 #-------------------------------------------------------------------------------
-# Name:        módulo1
+# Name:        module2
 # Purpose:
 #
 # Author:      Manu
 #
-# Created:     14/03/2020
+# Created:     07/03/2020
 # Copyright:   (c) Manu 2020
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
@@ -16,7 +16,7 @@ import mysql.connector
 
 rutazip = r'C:\Users\Manu\Desktop\Git BBDD\Python\Python pruebas\Zips\02197706_MESA.zip'
 rutaunzip = r'C:\Users\Manu\Desktop\Git BBDD\Python\Python pruebas\Unzips\02197706_MESA.zip'
-fileUnzip = r'C:\Users\Manu\Desktop\Git BBDD\Python\Python pruebas\Unzips\05027706.DAT'
+fileUnzip = r'C:\Users\Manu\Desktop\Git BBDD\Python\Python pruebas\Unzips\03027706.DAT'
 
 dirActual = os.path.dirname(rutazip)
 print(dirActual)
@@ -40,14 +40,16 @@ try:
 
        for linea in fitxer:
             llista = []
-            llista.append(linea[18:118].strip())
-            llista.append(linea[11:13])
-            llista.append(linea[13:16])
-            insert_municipis = ('INSERT INTO municipis (nom, codi_ine, provincia_id) VALUES (%s, %s, %s)')
-            cursor.execute(insert_municipis, llista)
+            llista.append(linea[15:64].strip())
+            llista.append(linea[64:214].strip())
+            llista.append(linea[220:226])
+            llista.append(linea[226:232])
+            insert_candidatures = ('INSERT INTO candidatures (eleccio_id, nom_curt, nom_llarg, codi_acumulacio_provincia, codi_acumulacio_ca) VALUES (1,%s, %s, %s, %s)')
+            cursor.execute(insert_candidatures, llista)
 except OSError as e:
     print('Imposible abrir fichero ' + pathFitxer)
 
 cnx.commit()
 cursor.close()
 cnx.close()
+

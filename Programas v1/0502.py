@@ -37,9 +37,9 @@ try:
             llista = []
             #CD = (linea[8:14])
             llista.append(linea[18:118].strip())
-            llista.append(linea[11:13])
             llista.append(linea[13:16])
-            llista.append(linea[16:18])
+            llista.append(linea[11:13])
+            #llista.append(linea[16:18]) districte
 
             print(llista)
 

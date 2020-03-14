@@ -9,14 +9,14 @@
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
 
-iimport zipfile
+import zipfile
 import os
 import sys
 import mysql.connector
 
-rutazip = r'C:\Users\Manu\Desktop\Python\Zips\02197706_MESA.zip'
-rutaunzip = r'C:\Users\Manu\Desktop\Python\Unzips\02197706_MESA.zip'
-fileUnzip = r'C:\Users\Manu\Desktop\Python\Unzips\07027706.DAT'
+rutazip = r'C:\Users\Manu\Desktop\Git BBDD\Python\Python pruebas\Zips\02197706_MESA.zip'
+rutaunzip = r'C:\Users\Manu\Desktop\Git BBDD\Python\Python pruebas\Unzips\02197706_MESA.zip'
+fileUnzip = r'C:\Users\Manu\Desktop\Git BBDD\Python\Python pruebas\Unzips\07027706.DAT'
 
 dirActual = os.path.dirname(rutazip)
 print(dirActual)

@@ -9,14 +9,14 @@
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
 
-iimport zipfile
+import zipfile
 import os
 import sys
 import mysql.connector
 
-rutazip = r'C:\Users\Manu\Desktop\Python\Zips\02197706_MESA.zip'
-rutaunzip = r'C:\Users\Manu\Desktop\Python\Unzips\02197706_MESA.zip'
-fileUnzip = r'C:\Users\Manu\Desktop\Python\Unzips\07027706.DAT'
+rutazip = r'C:\Users\Manu\Desktop\Git BBDD\Python\Python pruebas\Zips\02197706_MESA.zip'
+rutaunzip = r'C:\Users\Manu\Desktop\Git BBDD\Python\Python pruebas\Unzips\02197706_MESA.zip'
+fileUnzip = r'C:\Users\Manu\Desktop\Git BBDD\Python\Python pruebas\Unzips\04027706.DAT'
 
 dirActual = os.path.dirname(rutazip)
 print(dirActual)
@@ -37,16 +37,21 @@ cursor = cnx.cursor()
 
 try:
    with open (pathFitxer,'r') as fitxer:
-       #cont = 0
-       for linea in fitxer:
 
-            if linea[11:13] != '99':
-                llista = []
-                llista.append(linea[14:64].strip())
-                llista.append(linea[11:13])
-                llista.append(linea[9:11])
-                insert_provincies = ('INSERT INTO provincies (nom, codi_ine, comunitat_aut_id) VALUES (%s, %s, %d)')
-                cursor.execute(insert_provincies, llista)
+       for linea in fitxer:
+            llista = []
+            llista1 = []
+
+            llista1.append(linea[25:50].strip())
+            for elemento in llista1:
+                        llista.append(elemento)
+            llista.append(linea[22:24])
+            llista.append(linea[24:25])
+            llista.append(linea[9:11])
+            llista.append(linea[15:21])
+            insert_candidats = ('INSERT INTO candidats (nom_complet, num_ordre, tipus, provincia_id, candidatura_id) VALUES (%s, %s, %s,%s, %s)')
+            cursor.execute(insert_candidats, llista)
+
 except OSError as e:
     print('Imposible abrir fichero ' + pathFitxer)
 

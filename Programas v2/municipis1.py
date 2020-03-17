@@ -1,10 +1,10 @@
 #-------------------------------------------------------------------------------
-# Name:        module2
+# Name:        módulo1
 # Purpose:
 #
 # Author:      Manu
 #
-# Created:     07/03/2020
+# Created:     14/03/2020
 # Copyright:   (c) Manu 2020
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
@@ -12,6 +12,7 @@
 import zipfile
 import os
 import sys
+import mysql.connector
 
 rutazip = r'C:\Users\Manu\Desktop\Git BBDD\Python\Python pruebas\Zips\02197706_MESA.zip'
 rutaunzip = r'C:\Users\Manu\Desktop\Git BBDD\Python\Python pruebas\Unzips\02197706_MESA.zip'
@@ -30,21 +31,23 @@ with zipfile.ZipFile(pathFitxerZip,'r') as zipRef:
 
 pathFitxer = fileUnzip
 
+cnx = mysql.connector.connect(host='192.168.255.133',user='perepi',password='pastanaga',
+      database='eleccions_generals2')
+cursor = cnx.cursor()
+
 try:
    with open (pathFitxer,'r') as fitxer:
 
        for linea in fitxer:
             llista = []
-            #CD = (linea[8:14])
-            llista.append(linea[136:141])# nº mesas
-            llista.append(linea[128:136])# poblacion
-            llista.append(linea[141:149])# censo
-
-
-            llista.append(linea[205:213])# votos candidaturas
-            llista.append(linea[189:197])# votos blanco
-            llista.append(linea[197:205])# votos nulos
-            print(llista)
-
+            llista.append(linea[18:118].strip())
+            llista.append(linea[13:16])
+            llista.append(linea[11:13])
+            insert_municipis = ('INSERT INTO municipis (eleccio_id, codi_ine_municipi, codi_ine_provincia) VALUES (1, %s, %s, %s)')
+            cursor.execute(insert_municipis, llista)
 except OSError as e:
     print('Imposible abrir fichero ' + pathFitxer)
+
+cnx.commit()
+cursor.close()
+cnx.close()

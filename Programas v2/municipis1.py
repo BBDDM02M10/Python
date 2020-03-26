@@ -41,9 +41,10 @@ try:
        for linea in fitxer:
             llista = []
             llista.append(linea[18:118].strip())
+            llista.sort()
             llista.append(linea[13:16])
             llista.append(linea[11:13])
-            insert_municipis = ('INSERT INTO municipis (eleccio_id, codi_ine_municipi, codi_ine_provincia) VALUES (1, %s, %s, %s)')
+            insert_municipis = ('INSERT INTO municipis (nom, codi_ine_municipi, provincia_id) VALUES (%s, %s, %s)')
             cursor.execute(insert_municipis, llista)
 except OSError as e:
     print('Imposible abrir fichero ' + pathFitxer)

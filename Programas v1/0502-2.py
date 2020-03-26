@@ -8,13 +8,14 @@
 # Copyright:   (c) Manu 2020
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
+
 import zipfile
 import os
 import sys
 
 rutazip = r'C:\Users\Manu\Desktop\Git BBDD\Python\Python pruebas\Zips\02197706_MESA.zip'
 rutaunzip = r'C:\Users\Manu\Desktop\Git BBDD\Python\Python pruebas\Unzips\02197706_MESA.zip'
-fileUnzip = r'C:\Users\Manu\Desktop\Git BBDD\Python\Python pruebas\Unzips\07027706.DAT'
+fileUnzip = r'C:\Users\Manu\Desktop\Git BBDD\Python\Python pruebas\Unzips\05027706.DAT'
 
 dirActual = os.path.dirname(rutazip)
 print(dirActual)
@@ -31,25 +32,16 @@ pathFitxer = fileUnzip
 
 try:
    with open (pathFitxer,'r') as fitxer:
-       #cont = 0
+
        for linea in fitxer:
-
-            if linea[11:13] != '99':
-                llista.sort()
-                llista = []
+            llista = []
             #CD = (linea[8:14])
-                llista.append(linea[14:64].strip())
+            llista.append(linea[18:118].strip())
+            llista.sort()
+            llista.append(linea[13:16])
+            llista.append(linea[11:13])
 
-                llista.append(linea[11:13])
-                llista.append(linea[9:11])
-            #llista.append(linea[141:149])
-            #llista.append(linea[189:197])
-            #llista.append(linea[197:205])
-            #llista.append(linea[205:213])
-            #llista.append(linea)
-                print(llista)
-                #cont+=1
-       #print(cont)
+            print(llista)
 
 except OSError as e:
     print('Imposible abrir fichero ' + pathFitxer)

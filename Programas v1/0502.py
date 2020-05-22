@@ -39,8 +39,6 @@ try:
             llista.append(linea[136:141])# nº mesas
             llista.append(linea[128:136])# poblacion
             llista.append(linea[141:149])# censo
-
-
             llista.append(linea[205:213])# votos candidaturas
             llista.append(linea[189:197])# votos blanco
             llista.append(linea[197:205])# votos nulos

@@ -38,8 +38,8 @@ try:
             #CD = (linea[8:14])
             llista.append(linea[15:64].strip())
             llista.append(linea[64:214].strip())
+            llista.append(linea[214:220].strip())
             llista.append(linea[220:226].strip())
-            llista.append(linea[226:232].strip())
             #llista.append(linea)
             print(llista)
 

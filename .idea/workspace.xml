@@ -27,7 +27,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="ToolWindowEvent Log.ShowToolbar" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RunManager" selected="Python.eleccions_municipis">
     <configuration name="0502bis-eleccions_municipis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -173,9 +173,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1590153299270" />
-    <state x="277" y="55" key="SettingsEditor" timestamp="1590153377770">
+    <state x="277" y="55" key="SettingsEditor" timestamp="1590153444153">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="55" key="SettingsEditor/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1590153377770" />
+    <state x="277" y="55" key="SettingsEditor/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1590153444153" />
   </component>
 </project>

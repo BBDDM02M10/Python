@@ -44,6 +44,7 @@ try: # Creacion de excepcion
    with open (pathFitxer,'r') as fitxer: # abrir archivo .DAT en modo lectura
        for linea in fitxer: # Bucle para leer linea a linea archivo .DAT
             llista = []
+            llista.append(linea[13:16])# Codigo ine municipio
             llista.append(linea[136:141])# Numero mesas
             llista.append(linea[128:136])# Poblacion
             llista.append(linea[141:149])# Censo

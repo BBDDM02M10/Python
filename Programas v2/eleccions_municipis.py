@@ -50,7 +50,7 @@ try: # Creacion de excepcion
             llista.append(linea[205:213])# Votos candidaturas
             llista.append(linea[189:197])# Votos blanco
             llista.append(linea[197:205])# Votos nulos
-            insert_comunitats_autonomes = ('INSERT INTO eleccions_municipis (eleccio_id, municipi_id, num_meses, '
+            insert_comunitats_autonomes = ('INSERT INTO eleccions_municipis (eleccio_id, codi_ine_municipi, num_meses, '
                                            'poblacio, cens, vots_candidatures, vots_blanc, vots_nuls) '
                                            'VALUES (1, %s, %s, %s, %s, %s, %s)')
             cursor.execute(insert_comunitats_autonomes, llista) # Insertamos en tabla de BBDD

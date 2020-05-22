@@ -36,7 +36,7 @@ pathFitxer = fileUnzip
 
 '''Conexion con BBDD'''
 
-cnx = mysql.connector.connect(host='192.168.255.133',user='perepi',password='pastanaga',
+cnx = mysql.connector.connect(host='192.168.255.131',user='perepi',password='pastanaga',
       database='eleccions_generals2')
 cursor = cnx.cursor()
 
@@ -48,7 +48,7 @@ try: # Creacion de excepcion
                 llista.append(linea[14:64].strip()) # Nombre ambito territorial
                 llista.append(linea[11:13]) #Codigo comunidad autonoma
                 llista.append(linea[9:11]) #Codigo provincia
-                insert_provincies = ('INSERT INTO provincies (nom, codi_ine, comunitat_aut_id) VALUES (%s, %s, %s)')
+                insert_provincies = ('INSERT INTO provincies (nom, codi_ine_provincia, comunitat_aut_id) VALUES (%s, %s, %s)')
                 cursor.execute(insert_provincies, llista) # Insertamos en tabla de BBDD
 except OSError as e: # Resolucion excepcion
     print('Imposible abrir fichero ' + pathFitxer)

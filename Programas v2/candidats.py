@@ -36,7 +36,7 @@ pathFitxer = fileUnzip
 
 '''Conexion con BBDD'''
 
-cnx = mysql.connector.connect(host='192.168.255.133',user='perepi',password='pastanaga',
+cnx = mysql.connector.connect(host='192.168.255.131',user='perepi',password='pastanaga',
       database='eleccions_generals2')
 cursor = cnx.cursor()
 
